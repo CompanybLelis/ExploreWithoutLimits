@@ -1,0 +1,383 @@
+html{scroll-behavior:smooth}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+  font-size: 62.5%;
+  --base-font: 'Mulish', sans-serif;
+
+  /* Colors */
+  --white: #FFFFFF;
+  --white-background: #F9F4FB;
+  --accent-colour: #B52184;
+  --text-base-colour: #312D64;
+  --gradient-background: linear-gradient(96.21deg, #343193 0%, #302C63 99.68%);
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: var(--base-font);
+  background-color: var(--white-background);
+}
+
+
+#app{
+  display: grid;
+  grid-template-areas: 
+  "main"
+  "cards"
+  "contact"
+  "footer";
+  grid-template-rows: 1fr 2fr 1fr 8rem;
+}
+
+img{
+  width: 100%;
+}
+
+/* Form */
+
+button,
+fieldset{
+  border: none;
+  background: none;
+  font-family: var(--base-font);
+}
+
+/* Main */
+
+main{
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .astronaut{
+  width: 36.5rem;
+  margin-bottom: 1.7rem;
+}
+
+main h1{
+  font-size: 3.2rem;
+  line-height: 4rem;
+  font-weight: 900;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--accent-colour);
+}
+
+main p{
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+
+  margin-bottom: 3.5rem;
+
+  color: var(--text-base-colour);
+}
+
+main .content a img{
+  display: block;
+  height: 10.5rem;
+  margin-bottom: 9rem;
+}
+
+main .content a img:hover {
+  filter: brightness(0.7);
+}
+
+/* Card Section */
+
+#cards{
+  grid-area: cards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 0rem 3.9rem;
+
+  background: var(--gradient-background);
+}
+
+#cards img{
+  width: 8rem;
+  height: 8rem;
+
+  margin-bottom: 2rem;
+}
+
+#cards h3{
+  font-size: 2.922rem;
+  line-height: 3.7rem;
+  font-weight: 900;
+
+  margin-bottom: 1rem;
+
+  color: var(--accent-colour);
+}
+
+#cards p{
+  max-width: 26.569rem;
+  font-size: 1.604rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.card{
+  height: 33rem;
+  border-radius: 2rem;
+  width: 100%;
+  height: 36rem;
+  padding: 2.6rem;
+  
+  background: var(--white);
+}
+
+/* Contact Section */
+
+#contact{
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  padding: 7.5rem 4rem;
+}
+
+#contact h2{
+  font-size: 3.2rem;
+  line-height: 4rem;
+  font-weight: 900;
+
+  margin-bottom: 4rem;
+
+  color: var(--accent-colour);
+}
+
+form{
+  width: 100%;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  width: 100%;
+}
+
+fieldset .input-wrapper{
+  display: flex;
+
+  margin-bottom: 2.5rem;
+  width: 100%;
+
+}
+
+#contact form input,
+#contact form textarea{
+  font-family: var(--base-font);
+  width: 100%;
+  border: 1.5px solid var(--text-base-colour);
+  border-radius: 1.5rem;
+  padding: 1.2rem 4.5rem;
+  line-height: 100%;
+}
+
+#contact form textarea{
+  padding: 1.2rem 1.6rem;
+  line-height: 140%;
+  height: 12.6rem;
+  background: none;
+}
+
+#name{
+  background: url(./images/user-icon.svg) no-repeat scroll 1.4rem 1rem;
+}
+
+#email{
+  background: url(./images/email-icon.svg) no-repeat scroll 1.4rem 1.1rem;
+}
+
+#contact form button{
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  color: var(--white);
+  background: var(--gradient-background);
+}
+
+/* Footer Section */
+
+footer{
+  grid-area: footer;
+
+  padding: 3.2rem 1.6rem;
+  background: var(--gradient-background);
+}
+
+footer p{
+  text-align: center;
+  color: var(--white);
+}
+
+@media (min-width: 1440px){
+  #app{
+    display: grid;
+    grid-template-areas: 
+    "main"
+    "cards"
+    "contact"
+    "footer";
+    grid-template-rows: 100vh 70vh 70vh 8rem;
+  }
+
+  main{
+    grid-area: main;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    padding: 0rem 3rem 0rem 11rem;
+    width: 100%;
+  }
+
+  main .astronaut{
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    height: auto;
+    width: 72rem;
+    margin-bottom: 0;
+  }
+
+  main h1{
+    font-size: 5.8rem;
+    line-height: 7.3rem;
+    margin-bottom: 0;
+  }
+
+  main p{
+    font-size: 3.2rem;
+    line-height: 4rem;
+    font-weight: 600;
+  
+    margin-bottom: 18rem;
+  
+    color: var(--text-base-colour);
+  }
+  
+  main .content a img{
+    width: 5.85rem;
+    height: auto;
+    margin-bottom: 0rem;
+  }
+
+  #cards{
+    grid-area: cards;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    padding: 0rem 3.9rem;
+  
+    background: var(--gradient-background);
+  }
+
+  .card{
+    height: 33rem;
+    border-radius: 2rem;
+    width: 36rem;
+    height: 45rem;
+    padding: 3.2rem;
+    
+    background: var(--white);
+  }
+
+  #cards img{
+    width: 9.7rem;
+    height: auto;
+  
+    margin-bottom: 4rem;
+  }
+
+  #cards h3{
+    font-size: 3.35rem;
+    line-height: 4.4rem;
+    font-weight: 900;
+  
+    margin-bottom: 1rem;
+  
+    color: var(--accent-colour);
+  }
+  
+  #cards p{
+    max-width: 32rem;
+    font-size: 1.85rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+  }
+
+  /* Contact Section */
+
+#contact{
+  padding: 9.5rem 11.2rem;
+  background: url(./images/stars.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+#contact h2{
+  font-size: 4.2rem;
+  line-height: 5.3rem;
+  font-weight: 900;
+
+  margin-bottom: 3rem;
+ 
+  color: var(--accent-colour);
+}
+
+form{
+  max-width: 59.2rem;
+}
+
+#contact form input,
+#contact form textarea{
+  font-family: var(--base-font);
+  width: 100%;
+  height: 4.8rem;
+  border: 2px solid var(--text-base-colour);
+  border-radius: 1.5rem;
+  padding: 1.2rem 4.5rem;
+  line-height: 100%;
+}
+
+#contact form textarea{
+  padding: 1.2rem 1.6rem;
+  line-height: 140%;
+  height: 12.6rem;
+  background: none;
+}
+
+::placeholder{ 
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 100%;
+
+  color: var(--text-base-colour);
+}
+
+}
